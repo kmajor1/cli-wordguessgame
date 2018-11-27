@@ -16,5 +16,7 @@
     "url": "https://github.com/kmajor1/cli-wordguessgame/issues"
   },
   "homepage": "https://github.com/kmajor1/cli-wordguessgame#readme",
-  "dependencies": {}
+  "dependencies": {
+    "inquirer": "^6.2.0"
+  }
 }
