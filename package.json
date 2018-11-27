@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/kmajor1/cli-wordguessgame/issues"
   },
-  "homepage": "https://github.com/kmajor1/cli-wordguessgame#readme"
+  "homepage": "https://github.com/kmajor1/cli-wordguessgame#readme",
+  "dependencies": {}
 }
