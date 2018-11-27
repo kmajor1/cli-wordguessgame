@@ -1,0 +1,19 @@
+{
+  "name": "cli-wordguessgame",
+  "version": "1.0.0",
+  "description": "Command Line Word Guess Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmajor1/cli-wordguessgame.git"
+  },
+  "author": "Kevin Major",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmajor1/cli-wordguessgame/issues"
+  },
+  "homepage": "https://github.com/kmajor1/cli-wordguessgame#readme"
+}
