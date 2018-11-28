@@ -5,7 +5,10 @@ const word = require('./word.js');
 // question object for inquirer prompt 
 var questions = [{type: 'input', name: 'ltrGuess', message: 'Guess a letter!', validate: function (a,b) {
     if (a === '') {
-        return 'Not a letter!';
+        return 'You need to type something!!';
+    }
+    else if (a.length > 1) {
+        return 'Only 1 letter at a time!'
     }
     else {
         return true; 
