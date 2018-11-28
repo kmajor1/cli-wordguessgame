@@ -13,11 +13,13 @@ var questions = [{type: 'input', name: 'ltrGuess', message: 'Guess a letter!', v
 }}];
 
 // array of words 
-var words = ['hello', 'goodbye']; 
+var words = ['Jurassic', 'Star Trek']; 
+// random selector of word on invocation of app 
+var random = Math.floor(Math.random()*2);
 
 // create new instance of word object 
 
-var wordToGuess = new word.Default(words[0]); 
+var wordToGuess = new word.Default(words[random]); 
 
 // command prompt function 
 function runPrompt() {
@@ -32,7 +34,7 @@ function runPrompt() {
                 // we can filter the array of letter objects to see how many letters remain unguessed 
                 var unguessedLtrs = wordToGuess.ltrObjs.filter(el => el.isGuessed == false);
                 // if there are more letters to be guessed, run the prompt again, otherwise message and quit
-                unguessedLtrs.length > 0 ? runPrompt() : console.log('Well Done');
+                unguessedLtrs.length > 0 ? runPrompt() : console.log('Well Done! You Guessed '+wordToGuess.displayWord() + ' correctly!');
         })
 
 }

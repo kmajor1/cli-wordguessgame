@@ -12,7 +12,8 @@ function Default(l) {
         }
     }
     this.checkL = function (guess) {
-        if (this.letter === guess) {
+
+        if (this.letter.toUpperCase() === guess.toUpperCase()) {
             // change isGuess to true
             this.isGuessed = true;
             return true; 
