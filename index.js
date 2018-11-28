@@ -1,4 +1,4 @@
-// require inquirer 
+// require inquirer and word module 
 const inq = require('inquirer');
 const word = require('./word.js'); 
 
@@ -15,29 +15,28 @@ var questions = [{type: 'input', name: 'ltrGuess', message: 'Guess a letter!', v
 // array of words 
 var words = ['hello', 'goodbye']; 
 
+// create new instance of word object 
+
 var wordToGuess = new word.Default(words[0]); 
 
-
+// command prompt function 
 function runPrompt() {
-    wordToGuess.displayWord(); 
+    // display the word to be guessed 
+    console.log(wordToGuess.displayWord()+'\n'); 
+    // load inquirer command prompt 
     inq.prompt(questions)
         .then(function (res) {
-            var unguessedLtrs = wordToGuess.ltrObjs.filter(el => el.isGuessed == false);
-            console.log(unguessedLtrs); 
-            if (unguessedLtrs.length == 0) {
-                // done!
-                return console.log('done!');
-            }
-            else {
                 console.log(`You Guessed ${res.ltrGuess}`);
-                wordToGuess.usrGuess(res.ltrGuess);
-                runPrompt(); 
-            }
-            
+                // usr guess method returns the number of letters that were correct 
+                wordToGuess.usrGuess(res.ltrGuess) > 0 ? console.log("Good Guess!") : console.log('Sorry, incorrect!'); 
+                // we can filter the array of letter objects to see how many letters remain unguessed 
+                var unguessedLtrs = wordToGuess.ltrObjs.filter(el => el.isGuessed == false);
+                // if there are more letters to be guessed, run the prompt again, otherwise message and quit
+                unguessedLtrs.length > 0 ? runPrompt() : console.log('Well Done');
         })
 
 }
-
+// run prompt 
 runPrompt(); 
 
     

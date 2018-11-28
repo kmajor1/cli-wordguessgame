@@ -8,21 +8,23 @@ function Default(word){
         var newLtr = new letter.Default(word[i]);
         this.ltrObjs[i] = newLtr; 
     }
-    this.displayWord = function () {
+    this.displayWord = function () { // doesn't actually display word! Just returns it. 
         // call display letter 
         var wordReveal = '';
         for (var i = 0; i < this.ltrObjs.length; i++) {
             var ltrReveal = this.ltrObjs[i].displayL();
             wordReveal = wordReveal + ltrReveal;
         }
-        return console.log(wordReveal);
+        return (wordReveal);
     }
     this.usrGuess = function (usrInput) {
+        var counter = 0; 
         for (var i = 0; i < this.ltrObjs.length; i++) {
             // call ltr guess 
-            this.ltrObjs[i].checkL(usrInput); 
+            this.ltrObjs[i].checkL(usrInput) ? counter++  : counter+=0;
         }
-        console.log(this.displayWord()); 
+        return counter; 
+        
         
         
     }

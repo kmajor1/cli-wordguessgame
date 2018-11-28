@@ -15,6 +15,10 @@ function Default(l) {
         if (this.letter === guess) {
             // change isGuess to true
             this.isGuessed = true;
+            return true; 
+        }
+        else {
+            return false; 
         }
     }
 }
