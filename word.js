@@ -1,6 +1,5 @@
 // require letter js 
 const letter = require('./letter.js');
-var a = new letter.Default('a'); 
 
 // word function 
 function Default(word){
@@ -16,7 +15,7 @@ function Default(word){
             var ltrReveal = this.ltrObjs[i].displayL();
             wordReveal = wordReveal + ltrReveal;
         }
-        return wordReveal; 
+        return console.log(wordReveal);
     }
     this.usrGuess = function (usrInput) {
         for (var i = 0; i < this.ltrObjs.length; i++) {
@@ -25,18 +24,13 @@ function Default(word){
         }
         console.log(this.displayWord()); 
         
+        
     }
 }
 
-var testWord = new Default('Park'); 
+module.exports = {Default}; 
 
-// run a user guess 
-testWord.usrGuess('a'); 
-testWord.usrGuess('b');
-testWord.usrGuess('r');
-testWord.usrGuess('p'); 
-testWord.usrGuess('k'); 
-testWord.usrGuess('P');
+
 
 
 
