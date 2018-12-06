@@ -3,6 +3,8 @@ const letter = require('./letter.js');
 
 // word function 
 function Default(word){
+    // wanted a prop that has the word as a string, not letter objects 
+    this.wordRef = word; 
     this.ltrObjs =[];
     for (var i = 0; i < word.length; i++) {
         var newLtr = new letter.Default(word[i]);

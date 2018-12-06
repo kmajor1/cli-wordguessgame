@@ -2,13 +2,18 @@ function Default(l) {
     this.letter = l;
     this.isGuessed = false;
     this.displayL = function () {
-        if (this.isGuessed) {
-            // return string rep of letter
+        if (this.letter === ' ') {
+            this.isGuessed = true; 
             return this.letter+' ';
         }
         else {
-            // return placeholder
-            return '_ ';
+            if (this.isGuessed) {
+                // return string rep of letter
+                return this.letter+' ';
+            }
+            else {
+                return '_ ';
+            }
         }
     }
     this.checkL = function (guess) {

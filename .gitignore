@@ -1,6 +1,13 @@
 
-# Created by https://www.gitignore.io/api/node,macos
-# Edit at https://www.gitignore.io/?templates=node,macos
+# Created by https://www.gitignore.io/api/node,code,macos
+# Edit at https://www.gitignore.io/?templates=node,code,macos
+
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/
+tsconfig.json
+jsconfig.json
 
 ### macOS ###
 # General
@@ -103,9 +110,12 @@ typings/
 .vuepress/dist
 
 # Serverless directories
-.serverless
+.serverless/
 
 # FuseBox cache
 .fusebox/
 
-# End of https://www.gitignore.io/api/node,macos
+#DynamoDB Local files
+.dynamodb/
+
+# End of https://www.gitignore.io/api/node,code,macos
