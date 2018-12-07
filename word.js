@@ -32,7 +32,7 @@ function WordCreator(word){
     }
 }
 
-module.exports = {word: Default}; 
+module.exports = {Default}; 
 
 
 
