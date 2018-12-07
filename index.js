@@ -1,6 +1,6 @@
 // require inquirer and word module 
 const inq = require('inquirer');
-const word = require('./word.js').Default;
+const word = require('./word.js');
 const chalk = require('chalk').default; 
 
 
@@ -84,7 +84,7 @@ function runPrompt() {
                     setTimeout(() => {
                         console.clear();  
                         runPrompt(); 
-                    }, 1500);
+                    }, 1000);
                 }
                 else {
                     console.log('YOU WIN!'); 
@@ -97,7 +97,10 @@ function runPrompt() {
 
 // lets greet the user with some cool graphics 
 function greeter () {
-    console.log(chalk.bgGreen.red.bold('Welcome to Nations of the World!'));
+    console.log('\n');
+    console.log(chalk.bgBlue.white.bold('Welcome to Nations of the World!'));
+    console.log('\n');
+    console.log(chalk.bgHex('#FFFFFF').blue('Guess the country!'));
 }
 
 // run prompt 

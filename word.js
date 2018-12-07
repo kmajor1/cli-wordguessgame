@@ -2,7 +2,7 @@
 const letter = require('./letter.js');
 
 // word function 
-function WordCreator(word){
+function Default(word){
     // wanted a prop that has the word as a string, not letter objects 
     this.wordRef = word; 
     this.ltrObjs =[];
