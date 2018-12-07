@@ -1,6 +1,11 @@
 // require inquirer and word module 
 const inq = require('inquirer');
-const word = require('./word.js'); 
+const word = require('./word.js').Default;
+const chalk = require('chalk').default; 
+
+
+
+
 
 // question object for inquirer prompt 
 var questions = [{type: 'input', name: 'ltrGuess', message: 'Guess a letter!', validate: function (a,b) {
@@ -30,6 +35,8 @@ var words = [ 'United States of America', 'Canada', 'Iceland', 'France', 'Poland
 // random selector of word on invocation of app 
 var random = Math.floor(Math.random()*words.length);
 
+
+
 // create new instance of word object 
 
 var wordToGuess = new word.Default(words[random]); 
@@ -58,7 +65,7 @@ function newGame() {
     })
 }
 
-// command prompt function 
+// main program loop 
 function runPrompt() {
     // display the word to be guessed 
     console.log(wordToGuess.displayWord()+'\n'); 
@@ -87,7 +94,14 @@ function runPrompt() {
         })
 
 }
+
+// lets greet the user with some cool graphics 
+function greeter () {
+    console.log(chalk.bgGreen.red.bold('Welcome to Nations of the World!'));
+}
+
 // run prompt 
+greeter(); 
 runPrompt(); 
 
     

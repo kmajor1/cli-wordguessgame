@@ -2,7 +2,7 @@
 const letter = require('./letter.js');
 
 // word function 
-function Default(word){
+function WordCreator(word){
     // wanted a prop that has the word as a string, not letter objects 
     this.wordRef = word; 
     this.ltrObjs =[];
@@ -32,7 +32,7 @@ function Default(word){
     }
 }
 
-module.exports = {Default}; 
+module.exports = {word: Default}; 
 
 
 
